@@ -21,22 +21,6 @@ const init = async () => {
         }
     })
 
-    // await server.register([
-    //     {
-    //         plugin: albums,
-    //         options: {
-    //             service: albumService,
-    //             validator: AlbumsValidation
-    //         }
-    //     },
-    //     {
-    //         plugin: songs,
-    //         options: {
-    //             service: songService,
-    //             validator: SongsValidation
-    //         }
-    //     }
-    // ])
 
     await server.register([
         {
@@ -74,7 +58,7 @@ const init = async () => {
             // penanganan server error sesuai kebutuhan
             const newResponse = h.response({
                 status: 'error',
-                message: response.message,
+                message: 'terjadi kegagalan pada server kami',
             });
             newResponse.code(500);
             return newResponse;
