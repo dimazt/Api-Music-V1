@@ -17,7 +17,7 @@ exports.up = pgm => {
             notNull: true
         },
         performer: {
-            type: 'TEXT[]',
+            type: 'VARCHAR(255)',
             notNull: true
         },
         genre: {
@@ -27,7 +27,7 @@ exports.up = pgm => {
         duration: {
             type: 'INTEGER'
         },
-        almbumId: {
+        album_id: {
             type: 'VARCHAR(50)',
 
         }

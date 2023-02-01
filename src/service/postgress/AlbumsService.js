@@ -30,13 +30,13 @@ class AlbumsService {
             text: 'SELECT * FROM albums WHERE id = $1',
             values: [id]
         }
-        const songsQuery = {
-            text: 'SELECT * FROM songs WHERE albumId = $1',
-            values: [id]
-        }
+        // const songsQuery = {
+        //     text: 'SELECT * FROM songs WHERE albumId = $1',
+        //     values: [id]
+        // }
 
         const albumResult = await this._pool.query(albumQuery)
-        const songsResult = await this._pool.query(songsQuery)
+        // const songsResult = await this._pool.query(songsQuery)
 
         if (!albumResult.rows.length) {
             throw new NotFoundError('Album tidak ditemukan')
@@ -47,7 +47,7 @@ class AlbumsService {
             id: album.id,
             name: album.name,
             year: album.year,
-            songs: songsResult.rows
+            // songs: songsResult.rows
         }
 
         return result
