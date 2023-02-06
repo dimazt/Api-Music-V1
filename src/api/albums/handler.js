@@ -34,8 +34,8 @@ class AlbumsHandler {
         return response
     }
 
-    async putAlbumByIdHandler(request, h){
-        const {id} = request.params
+    async putAlbumByIdHandler(request, h) {
+        const { id } = request.params
         this._validator = validateAlbumPayload(request.payload)
         await this._service.editAlbumById(id, request.payload)
 
@@ -45,12 +45,12 @@ class AlbumsHandler {
         }
     }
 
-    async deleteAlbumByIdHandler(request, h){
+    async deleteAlbumByIdHandler(request, h) {
         const { id } = request.params;
         await this._service.deleteAlbumById(id);
         return {
-          status: 'success',
-          message: 'Album berhasil di hapus',
+            status: 'success',
+            message: 'Album berhasil di hapus',
         };
     }
 }

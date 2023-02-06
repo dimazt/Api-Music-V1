@@ -55,7 +55,6 @@ const init = async () => {
                 return h.continue
             }
 
-            // penanganan server error sesuai kebutuhan
             const newResponse = h.response({
                 status: 'error',
                 message: 'terjadi kegagalan pada server kami',
@@ -64,7 +63,6 @@ const init = async () => {
             return newResponse;
         }
 
-        // jika bukan error, lanjutkan dengan response sebelumnya (tanpa terintervensi)
         return h.continue;
     })
     await server.start()

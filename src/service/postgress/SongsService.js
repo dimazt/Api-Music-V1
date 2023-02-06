@@ -19,7 +19,7 @@ class SongsService {
         const result = await this._pool.query(query)
 
         if (!result.rows[0].id) {
-            throw new InvariantError('Gagal menambahkan song')
+            throw new InvariantError('Song gagal ditambahkan')
         }
 
         return result.rows[0].id
@@ -31,7 +31,6 @@ class SongsService {
         }
         const songQuery = await this._pool.query(query)
         
-
         return songQuery.rows
     }
 

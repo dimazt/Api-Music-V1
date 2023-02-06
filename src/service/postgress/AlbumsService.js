@@ -31,7 +31,6 @@ class AlbumsService {
             values: [id]
         }
     
-
         const albumResult = await this._pool.query(albumQuery)
         
 
@@ -39,14 +38,7 @@ class AlbumsService {
             throw new NotFoundError('Album tidak ditemukan')
         }
 
-        const album = albumResult.rows[0]
-        const result = {
-            id: album.id,
-            name: album.name,
-            year: album.year,
-        }
-
-        return result
+        return albumResult.rows[0]
     }
 
     async editAlbumById(id, { name, year }) {
